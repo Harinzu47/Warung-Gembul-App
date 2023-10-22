@@ -12,7 +12,7 @@ Scenario('showing empty your favorite restaurant', ({ I }) => {
   I.see('Favorite Movie Not Found', '#favoriteResto');
 });
 
-Scenario('liking one restaurant', async ({ I }) => {
+Scenario('liking and unliking one restaurant', async ({ I }) => {
   I.see('Favorite Movie Not Found', '#favoriteResto');
 
   I.amOnPage('/');
@@ -29,12 +29,7 @@ Scenario('liking one restaurant', async ({ I }) => {
   I.seeElement('.card-resto');
   const likedRestoTittle = await I.grabTextFrom('.card-content-title');
   assert.strictEqual(firstRestoTittle, likedRestoTittle);
-});
 
-Scenario('unliking one restaurant', async ({ I }) => {
-  I.waitForElement('.card-resto', 10);
-  I.seeElement('.card-resto');
-  const likedRestoTittle = await I.grabTextFrom('.card-content-title');
   I.click(likedRestoTittle);
 
   I.seeElement('#likeButton');

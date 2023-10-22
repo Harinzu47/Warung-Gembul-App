@@ -3,7 +3,7 @@ import CONFIG from '../../global/config';
 const restoDetail = (resto) => `
 <article class="detail">
 <div class="img-container">
-  <img alt="${resto.name}" src="${CONFIG.BASE_IMG_URL + resto.pictureId}"/>
+  <img alt="${resto.name}" crossorigin="anonymous" src="${CONFIG.BASE_IMG_URL + resto.pictureId}"/>
 </div>
 <div class="content">
   <h3 class="resto-tittle">${resto.name}</h3>

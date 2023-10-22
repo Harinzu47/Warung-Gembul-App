@@ -64,6 +64,11 @@ a{
   border: none;
 }
 
+.hamburger picture img {
+  width: 44px;
+  height: 44px;
+}
+
 .hero {
   position: relative;
   text-align: center; 
