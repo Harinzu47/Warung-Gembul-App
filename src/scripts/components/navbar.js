@@ -10,7 +10,10 @@ class NavbarComponent extends HTMLElement {
                 <a href="/">Warung Gembul</a>
             </div>
             <button class="hamburger" type="button">
-                <img src="./images/heros/icons8-hamburger-menu-50-removebg-preview.png" alt="Hamburger Menu">
+            <picture>
+            <source media="(max-width:600px)" srcset="./images/icons8-hamburger-menu-50-removebg-preview-small.png">
+            <img src="./images/icons8-hamburger-menu-50-removebg-preview-large.png" alt="Hero Image">
+            </picture>
             </button>
             <ul class="nav-list">
                 <li class="nav-item"><a href="#/beranda">Beranda</a></li>

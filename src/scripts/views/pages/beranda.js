@@ -6,7 +6,10 @@ const Beranda = {
     return `
     <section tabindex="0" class="tentang-kami" id="tentang">
     <article class="img-profile">
-      <img src="./images/heros/14852515_5526265-removebg-preview.png" alt="Logo Kami">
+    <picture>
+    <source media="(max-width:600px)" srcset="./images/logo-warung-small.png">
+    <img src="./images/logo-warung-large.png" alt="Hero Image">
+    </picture>
     </article>
     <article class="description">
       <h2 class="title">Warung Gembul</h2>

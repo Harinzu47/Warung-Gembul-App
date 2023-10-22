@@ -11,17 +11,33 @@ if (!fs.existsSync(destination)) {
 
 fs.readdirSync(target)
   .forEach((image) => {
+    // Menggunakan Sharp untuk mengubah gambar JPG
     sharp(`${target}/${image}`)
       .resize(800)
       .toFile(path.resolve(
-        __dirname,
-        `${destination}/${image.split('.').slice(0, -1).join('.')}-large.jpg`,
+        destination,
+        `${image.split('.').slice(0, -1).join('.')}-large.jpg`,
       ));
 
     sharp(`${target}/${image}`)
       .resize(480)
       .toFile(path.resolve(
-        __dirname,
-        `${destination}/${image.split('.').slice(0, -1).join('.')}-small.jpg`,
+        destination,
+        `${image.split('.').slice(0, -1).join('.')}-small.jpg`,
+      ));
+
+    // Menggunakan Sharp untuk mengubah gambar PNG
+    sharp(`${target}/${image}`)
+      .resize(800)
+      .toFile(path.resolve(
+        destination,
+        `${image.split('.').slice(0, -1).join('.')}-large.png`,
+      ));
+
+    sharp(`${target}/${image}`)
+      .resize(480)
+      .toFile(path.resolve(
+        destination,
+        `${image.split('.').slice(0, -1).join('.')}-small.png`,
       ));
   });
